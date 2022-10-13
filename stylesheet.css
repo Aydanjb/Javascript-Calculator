@@ -1,0 +1,161 @@
+html {
+    font-family: sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #e9ecef;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+body, .main {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.calc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #212529;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #adb5bd;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 120px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#oldEquation {
+    font-size: 20px;
+    padding: 8px;
+}
+
+#currentEquation {
+    font-size: 40px;
+    padding: 8px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 5px;
+}
+
+.col-1, .col-2, .col-3, .row-4, .row-0 {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    gap: 5px;
+}
+
+button {
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 600;
+    height: 80px;
+    width: 64px;
+    flex: 1 1 auto;
+}
+
+button:hover {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+}
+
+button:active {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+}
+
+#clear {
+    background-color: #FF4742;
+}
+
+#clear:hover, #clear:active {
+    background-color: #fff;
+    background-position: 0 0;
+    color: #FF4742;
+    border-color: #FF4742;
+}
+
+#delete {
+    background-color: #FF4742;
+}
+
+#delete:hover, #clear:active {
+    background-color: #fff;
+    background-position: 0 0;
+    color: #FF4742;
+    border-color: #FF4742;
+}
+
+.operator {
+    background-color: #1CB0F6;
+    color: #000;
+}
+
+.operator:hover, .operator:active {
+    background-color: #fff;
+    background-position: 0 0;
+    color: #1CB0F6;
+    border-color: #1CB0F6;
+}
+
+.sidebar {
+    order: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 260px;
+    padding: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #e9ecef;
+    font-size: 24px;
+    font-weight: 600;
+}
