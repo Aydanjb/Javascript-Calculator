@@ -7,6 +7,10 @@ const decimalButton = document.querySelector("#decimal");
 const previousDisplay = document.querySelector("#previousDisplay");
 const currentDisplay = document.querySelector("#currentDisplay");
 
+const clear = () => {
+
+};
+
 numButtons.forEach(button => {
     
 });
