@@ -10,6 +10,7 @@ const currentDisplay = document.querySelector("#currentDisplay");
 let operandOne = "";
 let operandTwo = "";
 let operation = "";
+let result = "";
 
 const clear = () => {
     operandOne = "";
@@ -20,7 +21,8 @@ const clear = () => {
 };
 
 const backspace = () => {
-
+    if (operandOne === "") return;
+    operandOne = operandOne.slice(0, operandOne.length - 1);
 };
 
 const pushNumber = (value) => {
@@ -28,12 +30,10 @@ const pushNumber = (value) => {
     operandOne += value;
 };
 
-
-
 const updatePreviousDisplay = (value) => {
     if (operandOne === "") return;
     if (operandTwo !== "") {
-        evaluate();
+        operate();
     }
     operation = value;
     operandTwo = operandOne;
@@ -41,12 +41,51 @@ const updatePreviousDisplay = (value) => {
 };
 
 const updateDisplay = () => {
-    currentDisplay.textContent = operandOne;
-    previousDisplay.textContent = operandTwo;
+        currentDisplay.textContent = operandOne;
+    if (operation != "") {
+        previousDisplay.textContent = `${operandTwo} ${operation}`;
+    }
+    else {
+        previousDisplay.textContent = "";
+    }
+};
+
+const operate = () => {
+    opOne = parseFloat(operandOne);
+    opTwo = parseFloat(operandTwo);
+    if (operandOne === NaN || operandTwo === NaN) return
+    switch (operation) {
+        case "+":
+            result = opTwo + opOne;
+            break
+        case "-":
+            result = opTwo - opOne;
+            break
+        case "x":
+            result = opTwo * opOne;
+            break
+        case "/":
+            if (opOne === 0) {
+                result = "ERROR";
+                break
+            }
+            result = opTwo / opOne;
+            break
+        default:
+            return
+    }
+    operandOne = result;
+    operation = "";
+    operandTwo = "";
 };
 
 clearButton.addEventListener("click", () => {
     clear();
+})
+
+deleteButton.addEventListener("click", () => {
+    backspace();
+    updateDisplay();
 })
 
 numButtons.forEach(button => {
@@ -62,3 +101,8 @@ operatorButtons.forEach(button => {
         updateDisplay();
     })
 });
+
+equalsButton.addEventListener("click", () => {
+    operate();
+    updateDisplay();
+})
