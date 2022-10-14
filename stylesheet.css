@@ -60,12 +60,12 @@ body, .main {
     background-color: #fff;
 }
 
-#oldEquation {
+#previousDisplay {
     font-size: 20px;
     padding: 8px;
 }
 
-#currentEquation {
+#currentDisplay {
     font-size: 40px;
     padding: 8px;
 }
